@@ -1,7 +1,9 @@
 :root {
-    --bg-color: rgb(24, 24, 24);
-    --font-color: rgb(119, 119, 119);
-    --title-color: rgb(223, 223, 223);
+    --bg-color: rgb(33, 33, 33);
+    --font-color: rgb(136, 136, 136);
+    --title-color: rgb(240, 240, 240);
+    --border-color: rgb(65, 65, 65);
+    --el-color: rgb(38, 38, 255);
 }
 
 * {
@@ -12,6 +14,12 @@ body {
     font-family: sans-serif;
     background-color: var(--bg-color);
     color: var(--font-color);
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 li a {
@@ -22,83 +30,96 @@ li a {
 .titlefont {
     font-family: serif;
     color: var(--title-color);
-    font-weight: 500;
-}
 
-.leftNavbar {
-    margin-top: 3rem;
-    padding: 1rem 2rem;
-    height: 100%;
-    position: fixed;
-    right: 0;
-    background-color: var(--bg-color);
-    line-height: 2rem;
-    text-transform: uppercase;
 }
 
 .topNavbar {
-    padding: 2rem 2rem;
+    align-items: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    padding: 1rem 2rem;
     width: 100%;
     background-color: var(--bg-color);
     line-height: 2rem;
     text-transform: uppercase;
+    justify-content: space-around;
 }
 
 .topNavbar ul {
     display: flex;
     font-size: 0.9rem;
     font-weight: 600;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 
+}
+
+.topNavbar h3 {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--title-color);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--title-color);
 }
 
 .topNavbar li {
     margin-left: 1rem;
 }
+.topNavbar a:hover {
+    transition: 0.5s;
+    color: var(--title-color);
+}
+.filter li:hover {
+    transition: 0.5s;
+    color: var(--title-color);
+}
+.type p:hover {
+    transition: 0.5s;
+    color: var(--title-color);
+}
+.results p:hover {
+    transition: 0.5s;
+    color: var(--title-color);
+}
 
 
 .topbar {
-    position: fixed;
+    border-top: 7px solid var(--el-color);
     width: 100%;
-    height: 3rem;
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 2rem;
-    color: var(--font-color);
-}
-
-.topbar p {
-    cursor: pointer;
-    text-transform: uppercase;
+    height: 2rem;
 }
 
 .titleContainer {
-    padding-top: 3rem;
+
+    padding-top: 7rem;
     margin-bottom: 1rem;
 }
 
 .titleContainer h1 {
-    font-size: 6rem;
+    font-size: 8rem;
     margin-bottom: 2rem;
+    font-weight: 500;
 }
 
 .titleContainer p {
+    line-height: 2.1rem;
     max-width: 65rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .filter ul {
     display: flex;
     flex-wrap: wrap;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 2.6rem;
 }
 
 .filter ul li {
-    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    margin: 0.2rem 1.5rem;
 }
 
 .filter li:last-child {
@@ -109,20 +130,40 @@ li a {
     text-transform: uppercase;
     font-size: 0.75rem;
     margin: 1rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 2rem;
 }
 
 .type ul {
-    line-height: 1.8rem;
+    line-height: 2.3rem;
     text-transform: capitalize;
     margin-left: 0.7rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+.type li {
+    display: flex;
+    align-items: center;
+}
+
+.type p {
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+img {
+    transition: 0.2s;
+    cursor: pointer;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-right: 10rem;
 }
 
 .results {
@@ -131,49 +172,73 @@ li a {
 }
 
 .results p {
+    cursor: pointer;
     margin: 1rem;
     margin-top: 2rem;
 }
 
 .text {
-    margin-top: 3rem;
+    margin-top: 7rem;
     display: flex;
     flex-wrap: wrap;
     /* justify-content: flex-end; */
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 2rem;
 }
 
 .title {
-    line-height: 2.5rem;
-    font-size: 2rem;
+    line-height: 3.5rem;
+    font-size: 3rem;
     margin-left: 2rem;
     margin-right: auto;
+    font-weight: 400;
 }
 
 .options {
     margin: 2rem;
     margin-bottom: 0;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
+    /* font-size: 1.2rem; */
+    font-weight: 500;
 }
 
 .extra {
-    line-height: 1.5rem;
+    font-weight: 500;
+    /* font-size: 1.1rem; */
+    line-height: 1.7rem;
     margin: 2rem;
-    max-width: 15rem;
+    max-width: 17rem;
 }
 
 .contentContainer {
     padding: 0 3rem;
 }
 
+.hover:hover {
+    cursor: pointer;
+    color: var(--title-color);
+}
+
+.selected {
+    color: var(--title-color);
+}
+.specialSelected {
+    padding-bottom: 1rem;
+    color: var(--title-color);
+    border-bottom: 1px solid var(--title-color);
+}
+.rotate{
+    transform: rotate(90deg);
+}
+
 @media only screen and (min-width:768px) {
     .wrapper {
         border: 1px solid;
-        border-color: var(--font-color);
+        border-color: var(--border-color);
         padding: 4rem;
     }
-    .options{
+
+    .options {
         margin: 0 2rem;
     }
 
