@@ -57,12 +57,12 @@ li a {
     display: flex;
     position: sticky;
     top: 0;
-    padding: 1rem 2rem;
     width: 100%;
     background-color: var(--bg-color);
     line-height: 2rem;
     text-transform: uppercase;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 1rem 4rem;
 }
 
 .topNavbar ul {
@@ -133,6 +133,17 @@ li a {
     transition: 0.5s;
     color: var(--title-color);
 }
+.topNavbar p {
+    z-index: 102;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+}
+.topNavbar p:hover {
+    transition: 0.5s;
+    color: var(--title-color);
+}
 
 .filter li:hover {
     transition: 0.5s;
@@ -157,8 +168,7 @@ li a {
 }
 
 .titleContainer {
-
-    padding-top: 7rem;
+    padding-top: 5rem;
     margin-bottom: 1rem;
 }
 
@@ -295,6 +305,13 @@ img:hover {
 }
 
 @media only screen and (min-width:768px) {
+    .topNavbar {
+        justify-content: space-around;
+        padding: 1rem 2rem;
+    }
+    .titleContainer {
+        padding-top: 7rem;
+    }
     .wrapper {
         border: 1px solid;
         border-color: var(--border-color);
