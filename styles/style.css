@@ -7,7 +7,21 @@
 }
 
 * {
+    transition: 0.3s;
     box-sizing: border-box;
+}
+
+.lower {
+    position: relative;
+    top: 7px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 20
 }
 
 body {
@@ -33,6 +47,11 @@ li a {
 
 }
 
+.navwrapper {
+    display: flex;
+    margin-right: 1rem;
+}
+
 .topNavbar {
     align-items: center;
     display: flex;
@@ -55,31 +74,76 @@ li a {
 
 }
 
+.side-navbar {
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    flex-wrap: nowrap;
+    align-items:flex-start;
+    
+    z-index: 101;
+    flex-direction: column;
+}
+.side-navbar li{
+    padding-left: 8rem;
+    font-size: 1.8rem;
+    line-height: 4rem;
+}
+
 .topNavbar h3 {
-    font-size: 0.8rem;
+    border-radius: 0 12px;
+    font-size: 0.9rem;
     margin-left: 1rem;
     white-space: nowrap;
     cursor: pointer;
     color: var(--title-color);
     text-transform: uppercase;
     border-bottom: 1px solid var(--title-color);
+
 }
 
-.topNavbar li {
-    margin-left: 1rem;
+
+.circle {
+    position: relative;
+    color: var(--bg-color);
+    border-radius: 100px;
+    background-color: white;
+    padding: 20px 1px 26px 18px;
 }
+
+.border-bot {
+    z-index: 10;
+    position: absolute;
+    right: 3px;
+    bottom: 17px;
+    width: 40px;
+    height: 1px;
+    background-color: var(--bg-color);
+}
+
+
+.topNavbar li {
+    margin-left: 2rem;
+}
+
 .topNavbar a:hover {
     transition: 0.5s;
     color: var(--title-color);
 }
+
 .filter li:hover {
     transition: 0.5s;
     color: var(--title-color);
 }
+
 .type p:hover {
     transition: 0.5s;
     color: var(--title-color);
 }
+
 .results p:hover {
     transition: 0.5s;
     color: var(--title-color);
@@ -89,7 +153,7 @@ li a {
 .topbar {
     border-top: 7px solid var(--el-color);
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
 }
 
 .titleContainer {
@@ -154,7 +218,8 @@ img {
     transition: 0.2s;
     cursor: pointer;
 }
-img:hover{
+
+img:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
@@ -222,13 +287,11 @@ img:hover{
 .selected {
     color: var(--title-color);
 }
+
 .specialSelected {
     padding-bottom: 1rem;
     color: var(--title-color);
     border-bottom: 1px solid var(--title-color);
-}
-.rotate{
-    transform: rotate(90deg);
 }
 
 @media only screen and (min-width:768px) {
@@ -239,7 +302,7 @@ img:hover{
     }
 
     .options {
-        margin: 0 2rem;
+        margin: 1 2rem;
     }
 
     .contentContainer {
@@ -248,7 +311,50 @@ img:hover{
 }
 
 @media only screen and (min-width:1200px) {
+    .topNavbar ul {
+        margin-left: 4rem;
+    }
+
     .contentContainer {
         padding: 0 10rem;
+    }
+}
+
+@media only screen and (max-width:730px) {
+    .contentContainer {
+        padding: 0 4rem;
+    }
+
+    .filter ul li {
+        line-height: 1.5rem;
+    }
+
+    .container {
+        padding-left: 5rem;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .contentContainer {
+        padding: 0 2rem 0 3rem;
+    }
+    .side-navbar li{
+        padding-left: 3rem;
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .type p {
+        font-size: 0.9rem;
+    }
+
+    .title {
+        line-height: 2.5rem;
+        font-size: 2rem;
+        margin-right: 10rem;
     }
 }
