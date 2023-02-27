@@ -1,21 +1,29 @@
-function selected() {
-  var element = event.target;
+document
+  .querySelectorAll("#Aselected")
+  .forEach((element) => element.addEventListener("click", () => selected(element)));
+
+function selected(element) {
   if (element.classList.contains("selected"))
     element.classList.remove("selected");
   else element.classList.add("selected");
 }
+document
+  .querySelectorAll("#toggleMenu")
+  .forEach((element) =>
+    element.addEventListener("click", () => toggleNavBar())
+  );
 function toggleNavBar() {
   const ul = document.querySelector("ul");
   var menu = document.querySelector("p");
   if (ul.style.display === "none") {
     ul.style.display = "flex";
     menu.innerText = "Close";
-    menu.style.position="fixed"
-    menu.style.right="4rem"
+    menu.style.position = "fixed";
+    menu.style.right = "4rem";
   } else {
     ul.style.display = "none";
     menu.innerText = "menu";
-    menu.style.position="static"
+    menu.style.position = "static";
   }
 }
 function addSideNavbarClass() {
@@ -36,6 +44,5 @@ function addSideNavbarClass() {
     menu.style.display = "none";
   }
 }
-window.addEventListener("click", selected);
 window.addEventListener("resize", addSideNavbarClass);
 window.addEventListener("load", addSideNavbarClass);
