@@ -1,6 +1,8 @@
 document
   .querySelectorAll("#Aselected")
-  .forEach((element) => element.addEventListener("click", () => selected(element)));
+  .forEach((element) =>
+    element.addEventListener("click", () => selected(element))
+  );
 
 function selected(element) {
   if (element.classList.contains("selected"))
@@ -38,6 +40,7 @@ function addSideNavbarClass() {
     ul.style.display = "none";
     menu.style.display = "block";
   } else {
+    menu.innerText = "menu";
     ul.classList.remove("side-navbar");
     ul.style.display = "flex";
     title.style.display = "block";
